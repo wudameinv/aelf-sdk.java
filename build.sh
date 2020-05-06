@@ -1,8 +1,8 @@
 #!/bin/bash
 AElfClient_path=AElfClient/
-AElfClientTestpath=AElfClientTest/
-for i in $AElfClient_path $AElfClientTestpath;
+AElfClientTest_path=AElfClientTest/
+for i in $AElfClient_path $AElfClientTest_path;
 do
     cd $i && mvn clean package && mvn compile && cd ..
 done
-cd $AElfClientTestpath && mvn test
+cd $AElfClientTest_path && mvn test
