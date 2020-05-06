@@ -32,3 +32,17 @@ jobs:
     displayName: 'Deploy a full node'
   - script: bash build.sh
     displayName: 'build and test'
+- job: build_all_macos
+# All tasks on macOS
+  displayName: Build all tasks (macos)
+  pool:
+    vmImage: macos-latest
+  variables:
+    phpVersion: 7.2
+  steps:
+  - task: DotNetCoreInstaller@0
+    inputs:
+      version: '3.1.101'
+  - script: cd scripts/aelf-node && bash start-mac.sh
+  - script: bash build.sh
+    displayName: 'build and test'
