@@ -41,5 +41,6 @@ jobs:
     inputs:
       version: '3.1.101'
   - script: cd scripts/aelf-node && bash start-mac.sh
+    displayName: 'Deploy a full node'
   - script: bash build.sh
     displayName: 'build and test'
