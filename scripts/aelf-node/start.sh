@@ -1,9 +1,10 @@
 #!/bin/bash
 dir=`pwd`
+pwd
 ip=`ip a | grep eth0 |grep 'inet' | awk -F/ '{print $1}'| awk '{print $2}'`
 sudo sed -i "s/127.0.0.1/$ip/g" appsettings.json
-sudo sed -i "s/127.0.0.1/$ip/g" ../../AElfClientTest/src/main/java/io/aelf/test/BlockChainSdkTest.java
-sudo sed -i "s/127.0.0.1/$ip/g" ../../AElfClientTest/src/main/java/io/aelf/test/NetSdkTest.java
+# sudo sed -i "s/127.0.0.1/$ip/g" ../../AElfClientTest/src/main/java/io/aelf/test/BlockChainSdkTest.java
+# sudo sed -i "s/127.0.0.1/$ip/g" ../../AElfClientTest/src/main/java/io/aelf/test/NetSdkTest.java
 sudo apt update && apt install unzip
 sudo mkdir -p /home/ubuntu/.ssh/aelf/keys && sudo mkdir -p /root/.ssh/aelf/keys
 cd ../../
